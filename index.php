@@ -12,7 +12,8 @@ $content = include_template('main.php',
 
 $layout_content = include_template('layout.php', [
 	'content' => $content,
-	'title' => $config['title']
+	'title' => $config['title'],
+	'user_name' => $user_name
 ]);
 
 print($layout_content);

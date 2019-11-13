@@ -1,8 +1,8 @@
 <?php
 // показывать или нет выполненные задачи
 $show_complete_tasks = rand(0, 1);
+$user_name = 'Карен Степанянц';
 $projects = ['Входящие','Учеба','Работа','Домашние дела','Авто'];
-$projects_count = count($projects);
 $tasks = [
 	[
 		'task' => 'Собеседование в IT компании',
@@ -41,4 +41,3 @@ $tasks = [
 		'is_complete' => false
 	]
 ];
-$tasks_count = count($tasks);
