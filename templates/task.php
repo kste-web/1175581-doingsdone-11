@@ -1,7 +1,13 @@
 <tr class="tasks__item task 
-<?php if($tasks[$index]['is_complete'] == true):?>
+<?php
+ if($task['is_complete'] == true):?>
 	<?php echo 'task--completed'; ?>
-	<?php endif;?>">
+<?php endif;?>
+<?php
+ if(count_the_time($task['date']) <= 24) :?>
+	<?php echo 'task--important'; ?>	
+<?php endif;?>
+	">
 	<td class="task__select">
 		<label class="checkbox task__checkbox">
 			<input class="checkbox__input visually-hidden" type="checkbox" checked>
