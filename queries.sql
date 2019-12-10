@@ -21,8 +21,8 @@ VALUES
 ('Заказать пиццу', null, 4 , (SELECT id FROM users WHERE name = 'kste'), 0);
 
 
-SELECT p.name FROM projects p JOIN users u ON p.user_id = u.id;
+SELECT name FROM projects WHERE user_id = 1;
 SELECT name FROM tasks WHERE project_id = 1;
-UPDATE tasks SET status = 0 WHERE id = 27;
+UPDATE tasks SET status = 1 WHERE id = 27;
 UPDATE tasks SET name = 'новая задача' WHERE id = 27;
 
