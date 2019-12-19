@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 				//Если нет ошибок, переводим юзера на форму авторизации
 		if ($res && empty($errors)) {
-			header("location: form-autorization.html");
+			header("location: enter.php");
 			exit();
 		}
 				//записываем данные в массив и передаем в шаблон
