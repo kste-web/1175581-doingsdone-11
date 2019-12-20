@@ -3,7 +3,7 @@
 function tasks_count ($array, $project_name) {
 	$count = 0;
 	for($i = 0; $i < count($array); $i++) {
-		if($array[$i]['category'] == $project_name) {
+		if($array[$i]['project_id'] == $project_name) {
 			$count++;
 		}
 	}

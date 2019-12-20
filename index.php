@@ -17,7 +17,7 @@ if(!$result) {
 $projects = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 	// Запрос на получение списка задач
-$sql = "SELECT name, status, dt_do FROM tasks WHERE user_id = 2";
+$sql = "SELECT name, status, dt_do, project_id FROM tasks WHERE user_id = 2";
 
 $result = mysqli_query($con, $sql);
 

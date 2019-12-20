@@ -9,7 +9,7 @@
 				<?php endif; ?>
 				">
 					<a class="main-navigation__list-item-link" href="http://localhost/1175581-doingsdone-11/index.php?<?php echo('project_id=' . $project['id']);?>"><?=htmlspecialchars($project['name']);?></a>
-					<span class="main-navigation__list-item-count"><?php tasks_count($tasks, $project['name']);?></span>
+					<span class="main-navigation__list-item-count"><?php tasks_count($tasks, $project['id']);?></span>
 				</li>
 				<?php endforeach;?>
 			</ul>
