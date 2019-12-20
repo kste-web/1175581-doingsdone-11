@@ -60,6 +60,30 @@ $content = include_template('main.php',
 		'project_id' => $project_id
 	]);
 
+//Если есть поисковой запрос
+$search = $_GET['q'] ?? '';
+if ($search) {
+	$sql = "SELECT name, status, dt_do FROM tasks WHERE user_id = 2 && MATCH(name) AGAINST(?)";
+
+
+	$stmt = db_get_prepare_stmt($con, $sql, [$search]);
+	mysqli_stmt_execute($stmt);
+	$result = mysqli_stmt_get_result($stmt);
+
+	$tasks = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+	$content = include_template('main.php',
+		[
+			'tasks' => $tasks,
+			'projects' => $projects,
+			'show_complete_tasks' => $show_complete_tasks,
+			'project_id' => $project_id,
+			'search' => $search
+		]);
+
+}
+
+
 $layout_content = include_template('layout.php', [
 	'content' => $content,
 	'title' => $config['title'],
