@@ -32,3 +32,5 @@ CREATE TABLE projects (
 	INDEX (user_id)
 );
 
+CREATE FULLTEXT INDEX tasks_search ON tasks(name);
+
